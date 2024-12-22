@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+<% if notice %>
+This is an alert
+<% end %>
+
+<% content_for :title, "Friends" %>
+
+<h1>Friends</h1>
+
+<% if user_signed_in? %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Bio</th>
+      <th>Phone</th>
+      <th>User ID</th>
+      <th>Show Link</th>
+    </tr>
+    <div id="friends">
+      <% @friends.each do |friend| %>
+        <%= render friend  %>
+      <% end %>
+    </div>
+  </table>
+
+  <%= link_to "New friend", new_friend_path %>
+<% else %>
+  <p>You gotta sign in first pls </p>
+<% end %>

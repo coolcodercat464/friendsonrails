@@ -1,0 +1,10 @@
+<% if current_user.id == friend.user_id %>
+  <tr>
+    <td><%= friend.name %></td>
+    <td><%= friend.email %></td>
+    <td><%= friend.bio %></td>
+    <td><%= friend.phone %></td>
+    <td><%= friend.user_id %></td>
+    <td><%= link_to "Show this friend", friend %></td>
+  </tr>
+<% end %>
